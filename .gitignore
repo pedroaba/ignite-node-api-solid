@@ -4,3 +4,5 @@ build
 .idea
 
 prisma/app.db*
+
+coverage
