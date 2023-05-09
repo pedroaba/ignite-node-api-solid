@@ -12,6 +12,7 @@
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "camelcase": "off"
   }
 }
