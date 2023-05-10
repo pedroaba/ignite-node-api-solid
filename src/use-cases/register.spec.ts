@@ -1,15 +1,15 @@
 import { expect, it, describe, beforeEach } from "vitest";
 import { RegisterUseCase } from "@/use-cases/register";
 import { compare } from "bcryptjs";
-import { InMemoryUsersReprository } from "@/repositories/in-memory/in-memory-users-repository";
+import { InMemoryUsersRepository } from "@/repositories/in-memory/in-memory-users-repository";
 import { UserAlreadyExistsError } from "./errors/user-already-exists-error";
 
-let usersRepository: InMemoryUsersReprository;
+let usersRepository: InMemoryUsersRepository;
 let sut: RegisterUseCase;
 
 describe("Register Use Case", () => {
   beforeEach(() => {
-    usersRepository = new InMemoryUsersReprository();
+    usersRepository = new InMemoryUsersRepository();
     sut = new RegisterUseCase(usersRepository);
   });
 
