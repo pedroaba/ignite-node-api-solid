@@ -38,4 +38,14 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
 
     return checkOnSameDate;
   }
+
+  async findManyByUserId(userId: string, page: number) {
+    const MAX_PER_PAGE = 20;
+    const currentPageToFetch = (page - 1) * MAX_PER_PAGE;
+    const limitToFetch = page * MAX_PER_PAGE;
+
+    return this.items
+      .filter((checkIn) => checkIn.user_id === userId)
+      .slice(currentPageToFetch, limitToFetch);
+  }
 }
